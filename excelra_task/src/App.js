@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState("0");
 
   const handleCounter = (el) => {
-    const res = count.concat(el);
+    const res = count.concat(String(el));
     setCount(res);
   };
 
@@ -18,6 +18,7 @@ function App() {
         <button onClick={() => handleCounter(7)}>7</button>
         <button onClick={() => handleCounter(8)}>8</button>
         <button onClick={() => handleCounter(9)}>9</button>
+        <button onClick={() => handleCounter("+")}>+</button>
         <br />
         <button onClick={() => handleCounter(4)}>4</button>
         <button onClick={() => handleCounter(5)}>5</button>
