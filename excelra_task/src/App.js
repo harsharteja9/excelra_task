@@ -30,10 +30,12 @@ function App() {
         <button onClick={() => handleCounter(4)}>4</button>
         <button onClick={() => handleCounter(5)}>5</button>
         <button onClick={() => handleCounter(6)}>6</button>
+        <button onClick={() => handleCounter("-")}>-</button>
         <br />
         <button onClick={() => handleCounter(1)}>1</button>
         <button onClick={() => handleCounter(2)}>2</button>
         <button onClick={() => handleCounter(3)}>3</button>
+        <button onClick={() => handleCounter("*")}>x</button>
         <br />
         <button onClick={() => handleCounter(0)}>0</button>
         <button onClick={() => handleOperation()}>=</button>
