@@ -12,6 +12,8 @@ function App() {
       setReset(false);
       return;
     }
+
+    if (el === 0 && count === "0") return;
     const res =
       el > "0" && count == "0" ? String(el) : count.concat(String(el));
     setCount(res);
