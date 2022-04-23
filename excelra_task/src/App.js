@@ -5,8 +5,15 @@ function App() {
   const [count, setCount] = useState("0");
 
   const handleCounter = (el) => {
-    const res = count.concat(String(el));
+    const res =
+      el > "0" && count == "0" ? String(el) : count.concat(String(el));
     setCount(res);
+  };
+
+  const handleOperation = () => {
+    let s = count.replace(/^0+/, "");
+    const cal = eval(s);
+    setCount(String(cal));
   };
 
   return (
@@ -29,6 +36,7 @@ function App() {
         <button onClick={() => handleCounter(3)}>3</button>
         <br />
         <button onClick={() => handleCounter(0)}>0</button>
+        <button onClick={() => handleOperation()}>=</button>
         <br />
       </div>
     </div>
