@@ -3,8 +3,14 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState("0");
+  const [reset, setReset] = useState(false);
 
   const handleCounter = (el) => {
+    if (reset) {
+      setCount(String(el));
+      setReset(false);
+      return;
+    }
     const res =
       el > "0" && count == "0" ? String(el) : count.concat(String(el));
     setCount(res);
@@ -14,6 +20,7 @@ function App() {
     let s = count.replace(/^0+/, "");
     const cal = eval(s);
     setCount(String(cal));
+    setReset(true);
   };
 
   return (
