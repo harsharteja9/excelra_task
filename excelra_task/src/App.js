@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState("0");
   const [reset, setReset] = useState(false);
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const handleCounter = (el) => {
     if (reset) {
@@ -29,23 +30,15 @@ function App() {
         <p>{count}</p>
       </div>
       <div>
-        <button onClick={() => handleCounter(7)}>7</button>
-        <button onClick={() => handleCounter(8)}>8</button>
-        <button onClick={() => handleCounter(9)}>9</button>
         <button onClick={() => handleCounter("+")}>+</button>
-        <br />
-        <button onClick={() => handleCounter(4)}>4</button>
-        <button onClick={() => handleCounter(5)}>5</button>
-        <button onClick={() => handleCounter(6)}>6</button>
         <button onClick={() => handleCounter("-")}>-</button>
-        <br />
-        <button onClick={() => handleCounter(1)}>1</button>
-        <button onClick={() => handleCounter(2)}>2</button>
-        <button onClick={() => handleCounter(3)}>3</button>
         <button onClick={() => handleCounter("*")}>x</button>
-        <br />
-        <button onClick={() => handleCounter(0)}>0</button>
         <button onClick={() => handleOperation()}>=</button>
+        <br />
+        <br />
+        {arr.map((el) => (
+          <button onClick={() => handleCounter(el)}>{el}</button>
+        ))}
         <br />
       </div>
     </div>
