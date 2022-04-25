@@ -14,6 +14,7 @@ body{
 
 .results {
   text-align: end;
+  letter-spacing: 1px;
   font-weight: 600;
   padding: 5px 10px;
   margin-bottom: 10px;
