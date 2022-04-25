@@ -24,37 +24,42 @@ function App() {
     let s = count.replace(/^0+/, "");
     const cal = eval(s);
     let val = "";
-    
-    if (s.includes('+')){
+
+    if (s.includes("+")) {
       val = s.split("+");
-      val = Number(val[0]) + Number(val[1])
+      val = Number(val[0]) + Number(val[1]);
     }
 
     setCount(String(val));
     setReset(true);
   };
 
-  const resetvalues =()=>{
+  const resetvalues = () => {
     setCount(0);
-    setReset(!reset)
-  }
+    setReset(!reset);
+  };
   return (
-    <div className="App">
-      <div>
+    <div className="app">
+      <div class="results">
         <p>{count}</p>
       </div>
       <div>
-        <button onClick={() => handleCounter("+")}>+</button>
-        <button onClick={() => handleCounter("-")}>-</button>
-        <button onClick={() => handleCounter("*")}>x</button>
-        <button onClick={() => handleOperation()}>=</button>
-        <button onClick={resetvalues}>Reset</button>
-        <br />
-        <br />
-        {arr.map((el) => (
-          <ButtonComp key={el} fn={() => handleCounter(el)}>{el}</ButtonComp>
-        ))}
-        <br />
+        <div className="operator_btn">
+          <button onClick={() => handleCounter("+")}>+</button>
+          <button onClick={() => handleCounter("-")}>-</button>
+          <button onClick={() => handleCounter("*")}>x</button>
+          <button onClick={() => handleOperation()}>=</button>
+          <button onClick={resetvalues}>
+            <small>Reset</small>
+          </button>
+        </div>
+        <div className="btns">
+          {arr.map((el) => (
+            <ButtonComp key={el} fn={() => handleCounter(el)}>
+              {el}
+            </ButtonComp>
+          ))}
+        </div>
       </div>
     </div>
   );
