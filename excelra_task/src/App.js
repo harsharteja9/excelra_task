@@ -23,7 +23,14 @@ function App() {
   const handleOperation = () => {
     let s = count.replace(/^0+/, "");
     const cal = eval(s);
-    setCount(String(cal));
+    let val = "";
+    
+    if (s.includes('+')){
+      val = s.split("+");
+      val = Number(val[0]) + Number(val[1])
+    }
+
+    setCount(String(val));
     setReset(true);
   };
 
