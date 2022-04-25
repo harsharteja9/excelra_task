@@ -40,7 +40,7 @@ function App() {
   };
   return (
     <div className="app">
-      <div class="results">
+      <div className="results">
         <p>{count}</p>
       </div>
       <div>
