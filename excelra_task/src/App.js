@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import ButtonComp from "./ButtonComp";
 
 function App() {
   const [count, setCount] = useState("0");
@@ -26,6 +27,10 @@ function App() {
     setReset(true);
   };
 
+  const resetvalues =()=>{
+    setCount(0);
+    setReset(!reset)
+  }
   return (
     <div className="App">
       <div>
@@ -36,10 +41,11 @@ function App() {
         <button onClick={() => handleCounter("-")}>-</button>
         <button onClick={() => handleCounter("*")}>x</button>
         <button onClick={() => handleOperation()}>=</button>
+        <button onClick={resetvalues}>Reset</button>
         <br />
         <br />
         {arr.map((el) => (
-          <button onClick={() => handleCounter(el)}>{el}</button>
+          <ButtonComp key={el} fn={() => handleCounter(el)}>{el}</ButtonComp>
         ))}
         <br />
       </div>
